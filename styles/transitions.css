@@ -1,0 +1,10 @@
+.slide-right-enter-active,
+.slide-right-leave-active {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.slide-right-enter,
+.slide-right-leave-active {
+  opacity: 0;
+  transform: translateX(100%);
+}
