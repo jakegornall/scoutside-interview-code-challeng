@@ -37,7 +37,10 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
 
-  serverMiddleware: [{ path: '/api/cart', handler: '~/api/cart.js' }],
+  serverMiddleware: [
+    { path: '/api/cart/add', handler: '~/api/cart/add.js' },
+    { path: '/api/cart/clear', handler: '~/api/cart/clear.js' },
+  ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
