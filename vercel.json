@@ -3,10 +3,15 @@
   "builds": [
     {
       "src": "nuxt.config.js",
-      "use": "@nuxtjs/vercel-builder"
+      "use": "@nuxtjs/vercel-builder",
+      "config": {
+        "serverFiles": [
+          "server-middleware/**"
+        ]
+      }
     }
   ],
-  "functions": {
-    "api/**/*.js": {}
-  }
+  "routes": [
+    { "src": "/api/cart", "dest": "/server-middleware/cart.js" }
+  ]
 }
