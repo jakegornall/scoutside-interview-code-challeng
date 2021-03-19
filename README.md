@@ -1,5 +1,15 @@
 # scoutside-interview-code-challeng
 
+deployed at https://scoutside-interview-code-challenge.vercel.app/
+
+## Primary contributions to note:
+`/components`
+`/pages`
+`/plugins`
+`/server-middleware`
+`/store`
+`/styles`
+
 ## Build Setup
 
 ```bash
