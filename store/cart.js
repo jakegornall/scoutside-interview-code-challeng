@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 export const state = () => ({
   subtotal: 0,
   lineItems: [],
@@ -10,16 +12,20 @@ export const mutations = {
     state.lineItems.push(product)
     state.subtotal += product.price
   },
+
   CLEAR(state) {
     state.lineItems = []
     state.subtotal = 0
   },
+
   SET_ERROR(state, errorMessage) {
     state.error = errorMessage
   },
+
   OPEN(state) {
     state.isOpen = true
   },
+
   CLOSE(state) {
     state.isOpen = false
   },
@@ -27,7 +33,7 @@ export const mutations = {
 
 export const actions = {
   async add({ commit }, productId) {
-    const response = await this.$axios.post(`/api/cart/add`, { productId })
+    const response = await axios.post(`/api/cart/add`, { productId })
 
     response.status === 200
       ? commit('ADD', response.data)
@@ -35,8 +41,9 @@ export const actions = {
 
     commit('OPEN')
   },
+
   async clear({ commit }) {
-    const response = await this.$axios.post(`/api/cart/clear`)
+    const response = await axios.post(`/api/cart/clear`)
 
     response.status === 200
       ? commit('CLEAR')
@@ -44,9 +51,11 @@ export const actions = {
 
     commit('OPEN')
   },
+
   open({ commit }) {
     commit('OPEN')
   },
+
   close({ commit }) {
     commit('CLOSE')
   },
